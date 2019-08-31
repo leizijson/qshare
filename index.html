@@ -16,14 +16,14 @@
     <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 <script>
     var obj;
-    var canshu = getUrlParam('id');
+    var canshu = getUrlParam('s');
     console.log(canshu);
     $.ajax
     ({
         cache: false,
         async: false,
         type: 'get',
-        url: "https://asdg.gokaopu.net/index.php/index/csharedata",
+        url: "https://asdg.gokaopu.net/index.php/index/csharedata?s="+canshu,
         success: function (data) {
             //console.log(JSON.parse(data).url);return ;
             //location.href = JSON.parse(data).url;
