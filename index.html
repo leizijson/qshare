@@ -17,16 +17,14 @@
 <script>
     var obj;
     var canshu = getUrlParam('s');
-    console.log(canshu);
+    var urls = atob(window.location.href);
     $.ajax
     ({
         cache: false,
         async: false,
         type: 'get',
-        url: "https://asdg.gokaopu.net/index.php/index/csharedata/s/"+canshu,
+        url: "https://asdg.gokaopu.net/index.php/index/csharedata/s/"+canshu+'/urls/'+urls,
         success: function (data) {
-            //console.log(JSON.parse(data).url);return ;
-            //location.href = JSON.parse(data).url;
             obj = JSON.parse(window.atob(data));
         }
     });
