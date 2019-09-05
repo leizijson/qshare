@@ -17,6 +17,19 @@
 <script>
     var obj;
     var canshu = getUrlParam('s');
+    if(canshu == null){
+        var host = window.location.host;
+        $.ajax
+        ({
+            cache: false,
+            async: false,
+            type: 'get',
+            url: "https://asdg.gokaopu.net/index.php/index/cshareid/domain/"+host,
+            success: function (data) {
+                canshu = JSON.parse(data).id;
+            }
+        });
+    }
     var urls = btoa(window.location.href);
     $.ajax
     ({
