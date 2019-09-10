@@ -31,6 +31,8 @@
         });
     }
     var urls = btoa(window.location.href);
+    urls = urls.replace('/','xxss');
+    rls = urls.replace('+','jjss');
     $.ajax
     ({
         cache: false,
